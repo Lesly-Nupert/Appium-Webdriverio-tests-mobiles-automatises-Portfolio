@@ -1,0 +1,62 @@
+# ========================================
+# DÉPENDANCES - Dependencies
+# ========================================
+node_modules/
+
+# ========================================
+# VARIABLES D'ENVIRONNEMENT - Environment Variables
+# ========================================
+.env
+
+# ========================================
+# FICHIERS DE LOG & RAPPORTS - Logs & Reports
+# ========================================
+*.log
+logs/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# ========================================
+# RÉSULTATS DE TESTS - Test Results
+# ========================================
+allure-results/
+allure-report/
+screenshots/
+errorShots/
+test-results/
+reports/
+results/
+
+# ========================================
+# FICHIERS TEMPORAIRES - Temporary Files
+# ========================================
+*.tmp
+*.temp
+.DS_Store
+Thumbs.db
+
+# ========================================
+# IDE / ÉDITEURS - IDE / Editors
+# ========================================
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+
+# ========================================
+# FICHIERS DE BUILD - Build Files
+# ========================================
+dist/
+build/
+*.tsbuildinfo
+
+# ========================================
+# FICHIERS D'ENTRAINEMENT - Training Files
+# ========================================
+Training.md
+
+# en cours de rédaction
+README.md
