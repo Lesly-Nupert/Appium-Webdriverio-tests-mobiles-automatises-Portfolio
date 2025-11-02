@@ -24,18 +24,18 @@ class HomePage {
 
     // Open Home Screen
     async openHomePage() {
-        await this.homeScreen.waitForDisplayed({ timeout: 5000 });
+        await this.homeScreen.waitForDisplayed();
     };
 
     // Click Logo
     async clickLogo() {
-        await this.logo.waitForDisplayed({ timeout: 5000 });
+        await this.logo.waitForDisplayed();
         await this.logo.click();
     };
 
     // Click Home Page Title
     async clickHomePageTitle() {
-        await this.homePageTitle.waitForDisplayed({ timeout: 5000 });
+        await this.homePageTitle.waitForDisplayed();
         await this.homePageTitle.click();
     };
 };
