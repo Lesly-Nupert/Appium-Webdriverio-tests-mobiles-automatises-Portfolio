@@ -20,6 +20,8 @@ yarn-error.log*
 # ========================================
 # RÉSULTATS DE TESTS - Test Results
 # ========================================
+results/allure-results/
+results/allure-report/
 allure-results/
 allure-report/
 screenshots/
