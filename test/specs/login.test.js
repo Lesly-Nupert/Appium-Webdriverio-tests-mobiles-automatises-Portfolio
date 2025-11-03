@@ -23,6 +23,10 @@ describe('Login Form Tests', () => {
         await browser.back();
         
     });
+
+    //===================================
+    // TESTS
+    // ==================================
     it('Should display success message after login', async () => {
         await LoginPage.fillFormLogin('test@test.com', 'password')
         

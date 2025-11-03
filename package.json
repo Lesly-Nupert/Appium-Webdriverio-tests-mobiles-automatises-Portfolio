@@ -7,7 +7,7 @@
   },
   "scripts": {
     "test": "wdio run ./wdio.conf.js",
-    "testOne": "wdio run ./wdio.conf.js --spec ./test/specs/login.test.js",  
+    "testOne": "wdio run ./wdio.conf.js --spec ./test/specs/formComponents.test.js",  
     "report": "allure generate ./results/allure-results --clean -o ./results/allure-report && allure open ./results/allure-report",
     "test:allure": "wdio run ./wdio.conf.js && npx allure generate ./results/allure-results --clean -o ./results/allure-report && npx allure open ./results/allure-report"
   },
