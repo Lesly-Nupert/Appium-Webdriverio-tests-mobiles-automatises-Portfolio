@@ -26,7 +26,7 @@ describe('Form Components Tests', () => {
         await FormComponentsPage.fillFormComponents('Tests Appium Mobile')
         
         const enteredtext = await FormComponentsPage.waitEnteredText()
-        expect(enteredtext).toBe('Tests Appium Mobxxx')
+        expect(enteredtext).toBe('Tests Appium Mobxxx')   //! ERRRROOOOOOORRRRRRRRRR
 
     });
 

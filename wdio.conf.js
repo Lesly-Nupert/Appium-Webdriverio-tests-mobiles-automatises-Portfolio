@@ -2,6 +2,7 @@
 // IMPORT DES VARIABLES D'ENVIRONNEMENT
 // ========================================
 require('dotenv').config()
+const allure = require('@wdio/allure-reporter').default;
 
 exports.config = {
     //
@@ -173,13 +174,25 @@ exports.config = {
     // =====
 
     // Capture screenshot on test failure with timestamp and test name
+    // Attach screenshots to report Allure
     afterTest: async function (test, context, { error, result, duration, passed, retries }) {
-        if (!passed) {
-            const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
-            const path = `./screenshots/${test.title.replace(/\s+/g, '_')}_${timestamp}.png`;
-            await browser.saveScreenshot(path);
-        }
-    },
+    if (!passed) {
+        // Prendre le screenshot en base64
+        const screenshot = await browser.takeScreenshot();
+        
+        // 1. Jenkins + local
+        allure.addAttachment(
+            `Screenshot - ${test.title}`,
+            Buffer.from(screenshot, 'base64'),
+            'image/png'
+        );
+        
+        // 2. timestamp
+        const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
+        const path = `./screenshots/${test.title.replace(/\s+/g, '_')}_${timestamp}.png`;
+        await browser.saveScreenshot(path);
+    }
+},
     //
 
     // WebdriverIO provides several hooks you can use to interfere with the test process in order to enhance
