@@ -27,6 +27,9 @@ describe('Drag And Drop Tests', () => {
     // ==================================
 
     it('Should drag and drop all elements, display success message, display retry text and button for return to Drag and Drop Page', async () => {
+        allure.addSeverity('normal');
+        allure.addFeature('Drag And Drop');
+        allure.addStory('Valid Drag And Drop');
         
         await DragAndDropPage.dragAndDropL2()
         await expect(DragAndDropPage.draggableL2).not.toBeDisplayed()

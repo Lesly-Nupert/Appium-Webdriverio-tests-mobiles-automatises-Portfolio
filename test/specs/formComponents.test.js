@@ -23,6 +23,10 @@ describe('Form Components Tests', () => {
     // TESTS
     // ==================================
     it('Should fill input field and display entered text', async () => {
+        allure.addSeverity('normal');
+        allure.addFeature('Form Components');
+        allure.addStory('Entered Text Displayed');
+
         await FormComponentsPage.fillFormComponents('Tests Appium Mobile')
         
         const enteredtext = await FormComponentsPage.waitEnteredText()
@@ -31,6 +35,10 @@ describe('Form Components Tests', () => {
     });
 
     it('Should check initial status then switch and back to initial status', async () => {
+        allure.addSeverity('normal');
+        allure.addFeature('Form Components');
+        allure.addStory('Check Switch Status');
+
         const isOn = await FormComponentsPage.isSwitchOn()
         expect(isOn).toBe(false)
 
@@ -55,6 +63,10 @@ describe('Form Components Tests', () => {
     });
 
     it('Should count all items of dropdown', async () => {
+        allure.addSeverity('normal');
+        allure.addFeature('Form Components');
+        allure.addStory('Count All Items Of Dropdown');
+
         await FormComponentsPage.openDropdown()
         const count = await FormComponentsPage.countItemsOfDropdown()
         expect(count).toBe(4)
@@ -63,6 +75,9 @@ describe('Form Components Tests', () => {
     });
 
     it('Should click an item and display it ', async () => {
+        allure.addSeverity('normal');
+        allure.addFeature('Form Components');
+        allure.addStory('Selected Text Displayed');
         
         await FormComponentsPage.openDropdown()
         await FormComponentsPage.selectItemByText('Appium is awesome')
@@ -72,6 +87,10 @@ describe('Form Components Tests', () => {
     });
 
     it('Should click active btn, display popup and click OK ', async () => {
+        allure.addSeverity('normal');
+        allure.addFeature('Form Components');
+        allure.addStory('Popup With Btn "OK" Displayed');
+
         await FormComponentsPage.clikActiveButton()
         
         const message = await FormComponentsPage.popupActiveButton()

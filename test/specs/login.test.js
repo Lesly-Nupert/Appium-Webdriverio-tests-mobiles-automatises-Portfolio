@@ -28,6 +28,10 @@ describe('Login Form Tests', () => {
     // TESTS
     // ==================================
     it('Should display success message after login', async () => {
+        allure.addSeverity('critical');
+        allure.addFeature('Authentication');
+        allure.addStory('Valid Login');
+
         await LoginPage.fillFormLogin('test@test.com', 'password')
         
         const successTitle = await LoginPage.waitForSuccessPopupTitle()
@@ -43,6 +47,10 @@ describe('Login Form Tests', () => {
     });
 
     it('Should display error messages after connexion', async () => {
+        allure.addSeverity('critical');
+        allure.addFeature('Authentication');
+        allure.addStory('Invalid Login');
+        
         await LoginPage.fillFormLogin('test@test', 'pass')
 
         const emailErrorMessage = await LoginPage.waitForErrorMessageForEmail()

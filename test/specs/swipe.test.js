@@ -23,6 +23,9 @@ describe('Swipe Page Tests', () => {
     // TESTS
     // ==================================
     it('Should swipe carousel multiple times and see first and last card', async () => {
+        allure.addSeverity('normal');
+        allure.addFeature('Swipe');
+        allure.addStory('Swipe All Items Of Carousel');
 
         // check first card
         const card1 = await $('android=new UiSelector().text("FULLY OPEN SOURCE")');
@@ -37,6 +40,10 @@ describe('Swipe Page Tests', () => {
     });
 
     it('Should display a text and to scroll until to display logo and texte hidden', async () => {
+        allure.addSeverity('normal');
+        allure.addFeature('Swipe');
+        allure.addStory('Scroll Until Logo And Text Displayed');
+
         const verticalText = await SwipePage.getVerticalText()
         expect(verticalText).toBe('Or swipe vertical to find what I\'m hiding.')
 
