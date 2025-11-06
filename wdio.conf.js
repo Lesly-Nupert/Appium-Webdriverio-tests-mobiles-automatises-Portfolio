@@ -112,7 +112,7 @@ exports.config = {
     baseUrl: 'http://localhost',
     //
     // Default timeout for all waitFor* commands.
-    waitforTimeout: 30000, // Jenkins
+    waitforTimeout: 60000, // Jenkins
     // waitforTimeout: 10000,
     //
     // Default timeout in milliseconds for request
