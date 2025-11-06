@@ -1,5 +1,5 @@
 {
-  "name": "appium-webdriverio-portfolio",
+  "name": "appium-tests-portfolio",
   "version": "1.0.0",
   "main": "index.js",
   "directories": {
@@ -7,7 +7,7 @@
   },
   "scripts": {
     "test": "wdio run ./wdio.conf.js",
-    "testOne": "wdio run ./wdio.conf.js --spec ./test/specs/formComponents.test.js",  
+    "testOne": "wdio run ./wdio.conf.js --spec ./test/specs/dragAndDrop.test.js",  
     "report": "allure generate ./results/allure-results --clean -o ./results/allure-report && allure open ./results/allure-report",
     "test:local": "wdio run ./wdio.conf.js && npx allure generate ./results/allure-results --clean -o ./results/allure-report && npx allure open ./results/allure-report",
     "test:ci": "wdio run ./wdio.conf.js && npx allure generate ./results/allure-results --clean -o ./results/allure-report"
