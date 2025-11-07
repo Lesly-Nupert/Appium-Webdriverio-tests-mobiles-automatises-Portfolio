@@ -3,7 +3,7 @@
  * Contains selectors and methods
  */
 
-class DragAndDropPage {
+class DragAndDrop {
     //===================================
     // SELECTORS
     // ==================================
@@ -163,4 +163,4 @@ class DragAndDropPage {
     };
 }
 
-module.exports = new DragAndDropPage();
+module.exports = new DragAndDrop();

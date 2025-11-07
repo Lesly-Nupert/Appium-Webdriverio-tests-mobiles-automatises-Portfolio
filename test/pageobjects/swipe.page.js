@@ -3,7 +3,7 @@
  * Contains selectors and methods
  */
 
-class SwipePage {
+class Swipe {
     //===================================
     // SELECTORS
     // ==================================
@@ -127,4 +127,4 @@ class SwipePage {
     };
 }
 
-module.exports = new SwipePage();
+module.exports = new Swipe();

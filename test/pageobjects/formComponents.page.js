@@ -3,7 +3,7 @@
  * Contains selectors and methods for interacting with the Form Components page.
  */
 
-class FormComponentsPage {
+class FormComponents {
     //===================================
     // SELECTORS
     // ==================================
@@ -157,4 +157,4 @@ class FormComponentsPage {
 };
 
 // Export instance
-module.exports = new FormComponentsPage();
+module.exports = new FormComponents();

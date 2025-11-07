@@ -1,6 +1,6 @@
 const { expect } = require('@wdio/globals')
-const HomePage = require('../pageobjects/home.page')
-const LoginPage = require('../pageobjects/login.page')
+const Home = require('../pageobjects/home.page')
+const Login = require('../pageobjects/login.page')
 
 describe('Login Form Tests', () => {
     //===================================
@@ -9,12 +9,12 @@ describe('Login Form Tests', () => {
 
     before(async () => {
         // Wait HomePage display
-        await HomePage.waitForHomePageDisplayed();
+        await Home.waitForHomeDisplayed();
     });
 
     beforeEach(async () => {
         // Wait reset login form
-        await LoginPage.openLoginFormAndClearFields();
+        await Login.openLoginFormAndClearFields();
     });
     
     after(async () => {
@@ -32,18 +32,18 @@ describe('Login Form Tests', () => {
         allure.addFeature('Authentication');
         allure.addStory('Valid Login');
 
-        await LoginPage.fillFormLogin('test@test.com', 'password')
+        await Login.fillFormLogin('test@test.com', 'password')
         
-        const successTitle = await LoginPage.waitForSuccessPopupTitle()
+        const successTitle = await Login.waitForSuccessPopupTitle()
         expect(successTitle).toBe('Success')
 
-        const successMessage = await LoginPage.waitForSuccessPopupMessage()
+        const successMessage = await Login.waitForSuccessPopupMessage()
         expect(successMessage).toBe('You are logged in!')
 
-        const okButton = await LoginPage.waitForSuccessPopupButtonOk()
+        const okButton = await Login.waitForSuccessPopupButtonOk()
         expect(okButton).toBe('OK')
 
-        await LoginPage.okButton.click()
+        await Login.okButton.click()
     });
 
     it('Should display error messages after connexion', async () => {
@@ -51,12 +51,12 @@ describe('Login Form Tests', () => {
         allure.addFeature('Authentication');
         allure.addStory('Invalid Login');
         
-        await LoginPage.fillFormLogin('test@test', 'pass')
+        await Login.fillFormLogin('test@test', 'pass')
 
-        const emailErrorMessage = await LoginPage.waitForErrorMessageForEmail()
+        const emailErrorMessage = await Login.waitForErrorMessageForEmail()
         expect(emailErrorMessage).toBe('Please enter a valid email address')
 
-        const passwordErrorMessage = await LoginPage.waitForErrorMessageForPassword()
+        const passwordErrorMessage = await Login.waitForErrorMessageForPassword()
         expect(passwordErrorMessage).toBe('Please enter at least 8 characters')
     });
 });

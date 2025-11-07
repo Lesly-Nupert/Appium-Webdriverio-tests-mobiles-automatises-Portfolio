@@ -3,19 +3,19 @@
  * Contains selectors and methods for interacting with the home page.
  */
 
-class HomePage {
+class Home {
     //===================================
     // SELECTORS
     // ==================================
 
-    // Get HomePage
+    // Get Home
     get homeScreen() { return $('~Home-screen') };
 
     // Get first logo "webdriverIO"
     get logo() { return $('android=new UiSelector().className("android.widget.ImageView").instance(0)') };
 
-    // Get title HomePage "WEBDRIVER"
-    get homePageTitle() { return $('android=new UiSelector().text("WEBDRIVER")') };
+    // Get title Home "WEBDRIVER"
+    get HomeTitle() { return $('android=new UiSelector().text("WEBDRIVER")') };
 
 
     //===================================
@@ -23,7 +23,7 @@ class HomePage {
     // ==================================
 
     // Open Home Page
-    async waitForHomePageDisplayed() {
+    async waitForHomeDisplayed() {
         await this.homeScreen.waitForDisplayed();
     };
 
@@ -34,11 +34,11 @@ class HomePage {
     };
 
     // Click Home Page Title
-    async clickHomePageTitle() {
-        await this.homePageTitle.waitForDisplayed();
-        await this.homePageTitle.click();
+    async clickHomeTitle() {
+        await this.HomeTitle.waitForDisplayed();
+        await this.HomeTitle.click();
     };
 };
 
 // Export instance
-module.exports = new HomePage();
+module.exports = new Home();

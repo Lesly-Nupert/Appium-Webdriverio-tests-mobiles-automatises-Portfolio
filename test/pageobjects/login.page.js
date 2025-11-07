@@ -3,7 +3,7 @@
  * Contains selectors and methods for interacting with the login page.
  */
 
-class LoginPage {
+class Login {
     //===================================
     // SELECTORS
     // ==================================
@@ -96,4 +96,4 @@ class LoginPage {
 };
 
 // Export instance
-module.exports = new LoginPage();
+module.exports = new Login();

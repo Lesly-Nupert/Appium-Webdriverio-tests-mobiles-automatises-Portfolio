@@ -1,6 +1,6 @@
 const { expect, browser } = require('@wdio/globals')
-const HomePage = require('../pageobjects/home.page')
-const FormComponentsPage = require('../pageobjects/formComponents.page')
+const Home = require('../pageobjects/home.page')
+const FormComponents = require('../pageobjects/formComponents.page')
 
 describe('Form Components Tests', () => {
     //===================================
@@ -9,8 +9,8 @@ describe('Form Components Tests', () => {
 
     before(async () => {
         // Wait HomePage and formComponents display
-        await HomePage.waitForHomePageDisplayed();
-        await FormComponentsPage.openFormComponents();
+        await Home.waitForHomeDisplayed();
+        await FormComponents.openFormComponents();
     });
     
     after(async () => {
@@ -27,9 +27,9 @@ describe('Form Components Tests', () => {
         allure.addFeature('Form Components');
         allure.addStory('Entered Text Displayed');
 
-        await FormComponentsPage.fillFormComponents('Tests Appium Mobile')
+        await FormComponents.fillFormComponents('Tests Appium Mobile')
         
-        const enteredtext = await FormComponentsPage.waitEnteredText()
+        const enteredtext = await FormComponents.waitEnteredText()
         expect(enteredtext).toBe('Tests Appium Mobile')
 
     });
@@ -39,26 +39,26 @@ describe('Form Components Tests', () => {
         allure.addFeature('Form Components');
         allure.addStory('Check Switch Status');
 
-        const isOn = await FormComponentsPage.isSwitchOn()
+        const isOn = await FormComponents.isSwitchOn()
         expect(isOn).toBe(false)
 
-        const textOn = await FormComponentsPage.SwitchText()
+        const textOn = await FormComponents.SwitchText()
         expect(textOn).toBe('Click to turn the switch ON')
 
-        await FormComponentsPage.clickSwitchButton()
+        await FormComponents.clickSwitchButton()
 
-        const isOff = await FormComponentsPage.isSwitchOn()
+        const isOff = await FormComponents.isSwitchOn()
         expect(isOff).toBe(false)
 
-        const textOff = await FormComponentsPage.SwitchText()
+        const textOff = await FormComponents.SwitchText()
         expect(textOff).toBe('Click to turn the switch OFF')
 
-        await FormComponentsPage.clickSwitchButton()
+        await FormComponents.clickSwitchButton()
 
-        const isOn2 = await FormComponentsPage.isSwitchOn()
+        const isOn2 = await FormComponents.isSwitchOn()
         expect(isOn2).toBe(false)
 
-        const textOn2 = await FormComponentsPage.SwitchText()
+        const textOn2 = await FormComponents.SwitchText()
         expect(textOn2).toBe('Click to turn the switch ON')
     });
 

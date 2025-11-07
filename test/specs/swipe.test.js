@@ -1,6 +1,6 @@
 const { expect } = require('@wdio/globals')
-const HomePage = require('../pageobjects/home.page')
-const SwipePage = require('../pageobjects/swipe.page');
+const Home = require('../pageobjects/home.page')
+const Swipe = require('../pageobjects/swipe.page');
 
 describe('Swipe Page Tests', () => {
     //===================================
@@ -9,8 +9,8 @@ describe('Swipe Page Tests', () => {
 
     before(async () => {
         // Wait HomePage and Swipe Page display
-        await HomePage.waitForHomePageDisplayed();
-        await SwipePage.openSwipeScreen();
+        await Home.waitForHomeDisplayed();
+        await Swipe.openSwipeScreen();
     });
 
     after(async () => {
@@ -32,7 +32,7 @@ describe('Swipe Page Tests', () => {
         expect(await card1.isExisting()).toBe(true);
 
         //swipe 5 times
-        await SwipePage.swipeCarouselMultipleTimes(5);
+        await Swipe.swipeCarouselMultipleTimes(5);
 
         // check last card
         const lastCard = await $('android=new UiSelector().text("COMPATIBLE")');
@@ -44,17 +44,17 @@ describe('Swipe Page Tests', () => {
         allure.addFeature('Swipe');
         allure.addStory('Scroll Until Logo And Text Displayed');
 
-        const verticalText = await SwipePage.getVerticalText()
+        const verticalText = await Swipe.getVerticalText()
         expect(verticalText).toBe('Or swipe vertical to find what I\'m hiding.')
 
-        await SwipePage.swipeVerticalUp()
+        await Swipe.swipeVerticalUp()
 
         //swipe 2 times
-        await SwipePage.swipeVerticalMultipleTimes(2);
+        await Swipe.swipeVerticalMultipleTimes(2);
 
-        await SwipePage.getHiddenLogo()
+        await Swipe.getHiddenLogo()
 
-        const hiddenText = await SwipePage.getHiddenLogoText()
+        const hiddenText = await Swipe.getHiddenLogoText()
         expect(hiddenText).toBe('You found me!!!')
     });
 
