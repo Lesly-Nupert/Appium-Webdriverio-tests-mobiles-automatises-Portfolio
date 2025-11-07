@@ -1,15 +1,15 @@
 # ========================================
-# DÉPENDANCES - Dependencies
+# DÉPENDANCES
 # ========================================
 node_modules/
 
 # ========================================
-# VARIABLES D'ENVIRONNEMENT - Environment Variables
+# VARIABLES D'ENVIRONNEMENT
 # ========================================
 .env
 
 # ========================================
-# FICHIERS DE LOG & RAPPORTS - Logs & Reports
+# FICHIERS DE LOG & RAPPORTS
 # ========================================
 *.log
 logs/
@@ -18,7 +18,7 @@ yarn-debug.log*
 yarn-error.log*
 
 # ========================================
-# RÉSULTATS DE TESTS - Test Results
+# RÉSULTATS DE TESTS
 # ========================================
 results/allure-results/
 results/allure-report/
@@ -31,7 +31,7 @@ reports/
 results/
 
 # ========================================
-# FICHIERS TEMPORAIRES - Temporary Files
+# FICHIERS TEMPORAIRES 
 # ========================================
 *.tmp
 *.temp
@@ -54,6 +54,12 @@ Thumbs.db
 dist/
 build/
 *.tsbuildinfo
+
+
+# ========================================
+# SCREENSHOTS / VIDEO README
+# ========================================
+capture_readme/
 
 # en cours de rédaction
 README.md
